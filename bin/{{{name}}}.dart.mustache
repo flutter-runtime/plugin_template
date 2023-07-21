@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:args/command_runner.dart';
 import 'package:ide_plugin/ide_plugin.dart';
+import 'src/fix_runtime_command.dart'
 
 Future<void> main(List<String> args) async {
   final runner = CommandRunner(
@@ -18,5 +19,5 @@ Future<void> main(List<String> args) async {
 }
 
 List<BaseCommand> get addCommands {
-  return [];
+  return [FixRuntimeCommand()];
 }
