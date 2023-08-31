@@ -22,7 +22,8 @@ class FixRuntimeCommand extends BaseCommand {
 
     /// 获取缓存的数据
     final cacheData = json['cacheData'].mapValue;
-    final cache = AnalyzerFileCache(cacheData, cacheData);
+        final cache = AnalyzerFileCache(cacheData,
+        cacheData.map((key, value) => MapEntry(key.toString(), value)));
     FixRuntime(filePath, cache).fix();
     return ChannelResponse.success(cache.toJson());
   }
